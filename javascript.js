@@ -1,5 +1,4 @@
 const container = document.querySelector("#container");
-container.style.display = "flex";
 
 function createGrid(size) {
 
@@ -42,8 +41,39 @@ for (let rowcount = 0; rowcount < size; rowcount++) {
 
     container.appendChild(row);
 }
+
+
 }
 
-createGrid(16);
+// create initial grid
+let gridSize = 16;
+
+createGrid(gridSize);
+
+// reset and change size buttons
+const resetButton = document.querySelector("#leftbutton");
+const changeButton = document.querySelector("#rightbutton");
+
+changeButton.addEventListener("click", () => {
+    let newSize = prompt ("How big do you want it? (Must not exceed 100).");
+    while (newSize > 100) {
+        newSize = prompt ("That's too big! Try again! (Must not exceed 100).");
+    }
+    gridSize = newSize;
+
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    createGrid(gridSize);
+})
+
+
+// just resets to most recent grid size
+resetButton.addEventListener("click", () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    createGrid(gridSize);
+})
 
 

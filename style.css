@@ -1,4 +1,22 @@
+.buttonbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button {
+
+}
+
+#leftbutton {
+    margin-right: auto;
+}
+
+#rightbutton {
+    margin-left: auto;
+}
+
 #container {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
