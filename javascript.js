@@ -33,9 +33,15 @@ for (let rowcount = 0; rowcount < size; rowcount++) {
         column.style.minWidth = boxWidth;
         column.style.minHeight = boxHeight;
         row.appendChild(column);
+        let opacity = 0.1;
 
         column.addEventListener("mouseover", () => {
-            column.style.backgroundColor = "black";
+                        
+            let randomColor = "rgba(" + Math.floor(Math.random()*255) + ", " +
+            Math.floor(Math.random()*255) + ", " + Math.floor(Math.random()*255) + ", " + opacity + ")";
+
+            column.style.backgroundColor = randomColor;
+            opacity = opacity + 0.1;
         })
     }
 
