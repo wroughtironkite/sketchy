@@ -34,12 +34,16 @@ for (let rowcount = 0; rowcount < size; rowcount++) {
         column.style.minWidth = boxWidth;
         column.style.minHeight = boxHeight;
         row.appendChild(column);
+
+        column.addEventListener("mouseover", () => {
+            column.style.backgroundColor = "black";
+        })
     }
 
     container.appendChild(row);
 }
 }
 
-createGrid(25);
+createGrid(16);
 
 
