@@ -3,6 +3,7 @@ const container = document.querySelector("#container");
 function createGrid(size) {
 
 for (let rowcount = 0; rowcount < size; rowcount++) {
+    
     let boxHeight = "";
     let rawWidth = 100;
     if (size < 42) {
